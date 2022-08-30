@@ -1,0 +1,16 @@
+.Data{
+
+}
+
+.button {
+    background-color: #fff;
+    border: 2px solid ;
+    color: #333;
+    padding: 0.5rem 3rem;
+    margin: 1rem;
+    overflow: hidden;
+  }
+  .button:hover {
+    color: #fff;
+    background: #333;
+  }
