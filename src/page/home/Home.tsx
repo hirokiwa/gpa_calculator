@@ -3,6 +3,7 @@ import './Home.css';
 import Table from './table/Table';
 import Data from './data/Data';
 import Popup from './popup/Popup';
+import Header from '../header/Header';
 
 const Home = () => {
   const [show_popup, setShow_popup] = useState<boolean>(false)
@@ -10,7 +11,7 @@ const Home = () => {
 
   return (
     <div className='Home'>
-        this is home
+        <Header/>
         <Table/>
         <Data 
           setShow_popup = {setShow_popup}
