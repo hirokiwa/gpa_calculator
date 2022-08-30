@@ -11,6 +11,8 @@
   }
 
   .Popup_inner {
+    border-top: solid 1rem #990000;
+    border-radius: 0.5rem;
     position: absolute;
     left: 25%;
     right: 25%;

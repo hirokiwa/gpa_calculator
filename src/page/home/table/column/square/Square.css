@@ -6,8 +6,18 @@ td{
 
 .class_box{
     width: 4rem;
+    /* background-color: aquamarine; */
+    border-top: solid 1px #990000;
+    border-left: solid 3px #990000;
+    /* border-bottom: solid 1px #990000; */
+    /* border-right: solid 1px #990000; */
+    /* box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, .5); */
+    /* padding: 0.5rem; */
 }
 
 select{
     border: none;
+    border-radius: 0;
+    /* background-color: aquamarine; */
+    /* padding: 0.5rem 1rem; */
 }

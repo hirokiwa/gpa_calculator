@@ -6,11 +6,13 @@ function Table_head() {
     <div className='Table_head'>
         <tr>
           <th className='left'></th>
-          <th className='day'>月</th>
-          <th className='day'>火</th>
-          <th className='day'>水</th>
-          <th className='day'>木</th>
-          <th className='day'>金</th>
+          {/* <div className='day_outer'> */}
+            <th className='day'>月</th>
+            <th className='day'>火</th>
+            <th className='day'>水</th>
+            <th className='day'>木</th>
+            <th className='day'>金</th>
+          {/* </div> */}
         </tr>
     </div>
   );
