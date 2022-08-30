@@ -7,3 +7,7 @@ td{
 .class_box{
     width: 4rem;
 }
+
+select{
+    border: none;
+}
