@@ -9,6 +9,6 @@
 
 @media screen and (max-width: 767px) {
     .Table > table{
-      width: 100%;
+      /* width: 100%; */
     }
   }
