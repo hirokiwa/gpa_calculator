@@ -1,3 +1,4 @@
+import { Console } from 'console';
 import React, {useState} from 'react';
 import './Data.css';
 
@@ -56,8 +57,15 @@ function Data(props:type_data) {
         props.setShow_popup(true)
     }
 
+    const Pressenter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            console.log("enter")
+            Gpa()
+        }
+    }
+
   return (
-    <div className='Data'>
+    <div className='Data' onKeyPress={(e) => Pressenter}>
         <button className='button' onClick={Gpa}>計算</button>
     </div>
   );
