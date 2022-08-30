@@ -8,7 +8,7 @@ const Table = () => {
     return (
     <div className='Table'>
         <div className='table_outer'>
-            <table border={1} className="table">
+            <table className="table">
                 <TableHead/>
                 <Repeat numTimes={6}>
                     {(index:number) => <div key={index}>

@@ -11,6 +11,9 @@
 .table_outer{
   display: inline-block;
   text-align: left;
+  padding: 1rem 2rem;
+  /* border: solid 1px #990000 ; */
+  background-color: rgb(255, 249, 249);
 }
 
 @media screen and (max-width: 767px) {

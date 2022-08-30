@@ -6,7 +6,7 @@ type Square_type = {
 
 function Square(props:Square_type) {
   return (
-    <td>
+    <td className='class_box'>
         <div>
             <select id={"grade"+props.id_number}>
                 <option value="" selected disabled>評価　</option>

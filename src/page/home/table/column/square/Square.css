@@ -1,3 +1,9 @@
 td{
     /* width: rem; */
+    /* background-color: aqua; */
+    height: 3rem;
+}
+
+.class_box{
+    width: 4rem;
 }
