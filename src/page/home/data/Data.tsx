@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import './Data.css';
 
-function Data() {
-    const [gpa, setGpa] = useState<number>()
+type type_data = {
+    setShow_popup:any;
+    gpa:number;
+    setGpa:any;
+}
+
+function Data(props:type_data) {
+    // const [gpa, setGpa] = useState<number>()
 
     const Gpa = () =>{
         let data = Array(30);
@@ -46,14 +52,13 @@ function Data() {
         console.log(GPA);
         console.log("gpa");
     
-        setGpa(GPA)
+        props.setGpa(GPA)
+        props.setShow_popup(true)
     }
 
   return (
     <div className='Data'>
-        Data
         <button className='button' onClick={Gpa}>計算</button>
-        {gpa}
     </div>
   );
 }
