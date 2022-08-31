@@ -1,15 +1,18 @@
 import { Console } from 'console';
 import React, {useState} from 'react';
 import './Data.css';
+import { useReward } from 'react-rewards';
 
 type type_data = {
     setShow_popup:any;
     gpa:number;
     setGpa:any;
+    setCheck_confetti:any;
 }
 
 function Data(props:type_data) {
     // const [gpa, setGpa] = useState<number>()
+    const { reward, isAnimating } = useReward('rewardId', 'confetti');
 
     const Gpa = () =>{
         let data = Array(30);
@@ -54,9 +57,9 @@ function Data(props:type_data) {
         console.log("gpa");
     
         props.setGpa(GPA)
+        props.setCheck_confetti(true)
         props.setShow_popup(true)
-    }
-
+}
     const Pressenter = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             console.log("enter")
@@ -66,6 +69,7 @@ function Data(props:type_data) {
 
   return (
     <div className='Data' onKeyPress={(e) => Pressenter}>
+        {/* <span id="rewardId" /> */}
         <button className='button' onClick={Gpa}>計算</button>
     </div>
   );

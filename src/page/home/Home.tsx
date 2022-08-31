@@ -8,6 +8,7 @@ import Header from '../header/Header';
 const Home = () => {
   const [show_popup, setShow_popup] = useState<boolean>(false)
   const [gpa, setGpa] = useState<number>(-999)
+  const [check_confetti, setCheck_confetti] = useState<boolean>(false)
 
   return (
     <div className='Home'>
@@ -15,6 +16,7 @@ const Home = () => {
         <Table/>
         <Data 
           setShow_popup = {setShow_popup}
+          setCheck_confetti = {setCheck_confetti}
           gpa = {gpa}
           setGpa = {setGpa}
         />
@@ -22,8 +24,11 @@ const Home = () => {
         {/* <Popup text='Close Me'></Popup> */}
         {show_popup ? 
           <Popup 
+            show_popup = {show_popup}
             setShow_popup = {setShow_popup}
             gpa = {gpa}
+            check_confetti ={check_confetti}
+            setCheck_confetti = {setCheck_confetti}
           />
           : null
         }
