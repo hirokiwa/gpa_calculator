@@ -36,6 +36,8 @@ const Popup = (props:type_popup) => {
                 <a
                     href={'https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=私のGPAは'+props.gpa+'です。'}
                     className = "tweet_button"
+                    target="_blank"
+                    rel="noreferrer noopener"
                 ><i className='twitter_icon'></i> Tweet</a>
                 <span id="rewardId" />
             </div>
