@@ -34,7 +34,7 @@ const Popup = (props:type_popup) => {
                 <div>あなたのGPAは</div>
                 <h1>{props.gpa}</h1>
                 <a
-                    href={'https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=私のGPAは'+props.gpa+'です。'}
+                    href={'https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=%E7%A7%81%E3%81%AEGPA%E3%81%AF'+props.gpa+'%E3%81%A7%E3%81%99%E3%80%82'}
                     className = "tweet_button"
                     target="_blank"
                     rel="noreferrer noopener"
