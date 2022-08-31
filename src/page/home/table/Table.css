@@ -18,7 +18,8 @@
   /* border-radius: 1rem; */
 }
 
-@media screen and (max-width: 767px) {
-    .Table > table{
-    }
+@media screen and (max-width: 450px) {
+  .table_outer{
+    padding: 0;
   }
+}
