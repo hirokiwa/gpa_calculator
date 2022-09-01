@@ -18,6 +18,8 @@ td{
 select{
     border: none;
     border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
     /* background-color: aquamarine; */
     /* padding: 0.5rem 1rem; */
 }
