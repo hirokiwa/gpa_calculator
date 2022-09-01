@@ -17,15 +17,16 @@
     left: 25%;
     right: 25%;
     top: 25%;
-    bottom: 25%;
     margin: auto;
     background: white;
   }
 
 .close{
     margin: 1rem;
-    /* border-radius: 1px; */
+    border-radius: 5px;
     border: solid 1px black;
+    width: 2rem;
+    height: 1.5rem;
 }
 
 .close:hover {
@@ -66,4 +67,17 @@
         left: 5%;
         right: 5%;
     }
-  }
+}
+
+@media screen and (max-width: 1200px) {
+    .Popup_inner{
+        height: 17rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Popup_inner{
+        height: 17rem;
+        bottom: 25%;
+    }
+}
