@@ -34,7 +34,7 @@ const Popup = (props:type_popup) => {
                 <div>あなたのGPAは</div>
                 <h1>{props.gpa.toFixed(2)}</h1>
                 <a
-                    href={'https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=%E7%A7%81%E3%81%AEGPA%E3%81%AF'+props.gpa.toFixed(2)+'%E3%81%A7%E3%81%99%E3%80%82%0ahttps%3A%2F%2Frits-gpa.vercel.app%2F'}
+                    href={'https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=%E7%A7%81%E3%81%AEGPA%E3%81%AF'+props.gpa.toFixed(2)+'%E3%81%A7%E3%81%99%E3%80%82%0a&hashtags=GPA%E8%A8%88%E7%AE%97%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F&hashtags=%E7%AB%8B%E5%91%BD%E9%A4%A8%0ahttps%3A%2F%2Frits-gpa.vercel.app%2F'}
                     className = "tweet_button"
                     target="_blank"
                     rel="noreferrer noopener"
