@@ -4,7 +4,10 @@
 }
  
 .day{
-    width: 19.1%;
+    /* width: 19.1%; */
+    width: 4rem;
+    border-left: solid 2px #990000;
+    border-right: solid 2px #990000;
     text-align: center;
     background-color: #990000;
     color: #fff;

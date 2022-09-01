@@ -18,8 +18,26 @@ td{
 select{
     border: none;
     border-radius: 0;
+    width: 100%;
     -webkit-appearance: none;
     appearance: none;
     /* background-color: aquamarine; */
     /* padding: 0.5rem 1rem; */
+}
+
+.select_outer{
+    position: relative;
+}
+
+.select_outer:after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    pointer-events: none;
+    transform: translateY(-50%) rotate(-135deg);
 }
