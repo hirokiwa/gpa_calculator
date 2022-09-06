@@ -2,22 +2,22 @@ import React , {useEffect, useState} from 'react';
 import './Popup.css'
 import { useReward } from 'react-rewards';
 
-type type_popup = {
+interface type_popup  {
     show_popup:boolean;
-    setShow_popup:any;
+    setShow_popup:React.Dispatch<React.SetStateAction<boolean>>;
     gpa:number;
     check_confetti:boolean;
-    setCheck_confetti:any;
+    setCheck_confetti:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Popup = (props:type_popup) => {
+const Popup = (props:type_popup):JSX.Element => {
     const { reward, isAnimating } = useReward('rewardId', 'confetti');
 
-    const close_popup = () => {
+    const close_popup = ():void => {
         props.setShow_popup(false)
     }
 
-    useEffect(() => {
+    useEffect(():void => {
         console.log(props.show_popup)
         if(props.show_popup === true && props.check_confetti === true){
             reward()

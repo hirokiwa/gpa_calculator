@@ -5,7 +5,7 @@ import Data from './data/Data';
 import Popup from './popup/Popup';
 import Header from '../header/Header';
 
-const Home = () => {
+const Home = ():JSX.Element => {
   const [show_popup, setShow_popup] = useState<boolean>(false)
   const [gpa, setGpa] = useState<number>(-999)
   const [check_confetti, setCheck_confetti] = useState<boolean>(false)
@@ -21,7 +21,6 @@ const Home = () => {
           setGpa = {setGpa}
         />
         <div id="content"></div>
-        {/* <Popup text='Close Me'></Popup> */}
         {show_popup ? 
           <Popup 
             show_popup = {show_popup}

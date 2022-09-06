@@ -1,10 +1,10 @@
 import React from 'react';
 import './Square.css';
-type Square_type = {
+interface Square_type  {
     id_number:number;
 }
 
-function Square(props:Square_type) {
+const Square = (props:Square_type):JSX.Element => {
   return (
     <td className='class_box'>
         <div>

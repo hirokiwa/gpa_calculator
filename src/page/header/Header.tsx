@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Header.css';
 
-function Header() {
+const Header = ():JSX.Element => {
   return (
     <div className='Header'>
         <h1>GPA Calculator</h1>

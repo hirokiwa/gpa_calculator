@@ -1,11 +1,11 @@
 import ReactNode from 'react';
 
-type type_repeat = {
+interface type_repeat {
     numTimes: number;
     children: any;
   }
 
-const Repeat = (props:type_repeat) => {
+const Repeat = (props:type_repeat):JSX.Element => {
 
     let items:number[] = [];
     for (let i = 0; i < props.numTimes; i++) {

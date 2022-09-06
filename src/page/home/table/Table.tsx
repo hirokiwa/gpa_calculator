@@ -4,7 +4,7 @@ import TableHead from './table_head/TableHead';
 import Column from './column/Column';
 import Repeat from '../../../function/Repeat';
 
-const Table = () => {
+const Table = ():JSX.Element => {
     return (
     <div className='Table'>
         <div className='table_outer'>

@@ -1,29 +1,28 @@
-import { Console } from 'console';
 import React, {useState} from 'react';
 import './Data.css';
 import { useReward } from 'react-rewards';
 
-type type_data = {
-    setShow_popup:any;
+interface type_data {
+    setShow_popup: React.Dispatch<React.SetStateAction<boolean>>;
     gpa:number;
-    setGpa:any;
-    setCheck_confetti:any;
+    setGpa:React.Dispatch<React.SetStateAction<number>>;
+    setCheck_confetti:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Data(props:type_data) {
+const Data = (props:type_data):JSX.Element => {
     // const [gpa, setGpa] = useState<number>()
     const { reward, isAnimating } = useReward('rewardId', 'confetti');
 
     const Gpa = () =>{
         let data = Array(30);
         
-        for(let i:number = 0; i < 30; i++){
+        for(let i = 0; i < 30; i++){
             data[i] = Array(2).fill(0);
             data[i][0] = document.getElementById("grade"+String(i));
             data[i][1] = document.getElementById("credit"+String(i));
         }
     
-        for(let i:number = 0; i < 30; i++){
+        for(let i = 0; i < 30; i++){
             console.log(data[i][0].value);
             console.log(data[i][1].value);
             if(data[i][0].value !== data[i][1].value){
@@ -35,15 +34,15 @@ function Data(props:type_data) {
             }
         }
     
-        let sum_score:number = 0;
-        let sum_credit:number = 0;
+        let sum_score = 0;
+        let sum_credit = 0;
         // calculate
         for(let i = 0; i < 30; i++){
             sum_score = sum_score + data[i][0].value * data[i][1].value;
             sum_credit = sum_credit + Number(data[i][1].value);
         }
 
-        let GPA:number = 0;
+        let GPA = 0;
 
         if(sum_credit !== 0){
             GPA = sum_score / sum_credit;
