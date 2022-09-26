@@ -13,6 +13,7 @@ const Home = ():JSX.Element => {
   return (
     <div className='Home'>
         <Header/>
+        <h1 className='discription'>立命館大学専用のGPA計算ツールです。</h1>
         <Table/>
         <Data 
           setShow_popup = {setShow_popup}

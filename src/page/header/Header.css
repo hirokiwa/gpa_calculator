@@ -1,6 +1,7 @@
 .Header{  
     border-bottom: solid 3px #990000;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+    margin-bottom: 0;
     /* background-color:#fff; */
     /* background-color: #990000; */
     padding: 0.5rem 0;
@@ -19,3 +20,10 @@
     /* color: #990000; */
     /* color: #fff; */
 }
+/* 
+.discription{
+    font-size: small;
+    margin: 1.5rem 0 1rem 0;
+    color:rgb(99, 99, 99);
+    font-weight: 500;
+} */
