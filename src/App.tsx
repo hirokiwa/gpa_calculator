@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './page/home/Home';
+import Undefined from './page/undefined/Undefined';
 
 const App = ():JSX.Element => {
   return (
@@ -11,6 +12,7 @@ const App = ():JSX.Element => {
         <Routes>
           <Route path={`/`} element={<Home />} />
           <Route path={`/auto-credit-handler-test`} element={<Home />} />
+          <Route path={`/*`} element={<Undefined />} />
         </Routes>
       </BrowserRouter>
     </div>
