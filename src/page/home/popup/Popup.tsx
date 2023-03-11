@@ -18,7 +18,6 @@ const Popup = (props:type_popup):JSX.Element => {
     }
 
     useEffect(():void => {
-        console.log(props.show_popup)
         if(props.show_popup === true && props.check_confetti === true){
             reward()
             props.setCheck_confetti(false)
