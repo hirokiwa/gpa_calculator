@@ -10,6 +10,7 @@ const App = ():JSX.Element => {
       <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<Home />} />
+          <Route path={`/auto-credit-handler-test`} element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
