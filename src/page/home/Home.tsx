@@ -4,6 +4,7 @@ import Table from './table/Table';
 import Data from './data/Data';
 import Popup from './popup/Popup';
 import Header from '../header/Header';
+import useReset from '../../hooks/useReset';
 
 const Home = ():JSX.Element => {
   const [show_popup, setShow_popup] = useState<boolean>(false)
@@ -31,7 +32,8 @@ const Home = ():JSX.Element => {
             setCheck_confetti = {setCheck_confetti}
           />
           : null
-        }
+      }
+      <button onClick={useReset}>リセット</button>
     </div>
   );
 }

@@ -32,7 +32,7 @@ const Square = (props: Square_type): JSX.Element => {
         <td className="class_box">
             <div>
                 <div className="select_outer">
-                    <select id={"grade" + props.id_number} onChange={autoCreditHandler}>
+                    <select id={"grade" + props.id_number} style={{color:"black"}} onChange={autoCreditHandler}>
                         <option value="" selected disabled>
                             評価　
                         </option>
@@ -46,7 +46,7 @@ const Square = (props: Square_type): JSX.Element => {
             </div>
             <div>
                 <div className="select_outer">
-                    <select id={"credit" + props.id_number}>
+                    <select id={"credit" + props.id_number} style={{color:"black"}}>
                         <option value="" selected disabled>
                             単位数
                         </option>
