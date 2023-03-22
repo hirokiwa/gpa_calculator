@@ -33,7 +33,7 @@ const Home = ():JSX.Element => {
           />
           : null
       }
-      <button onClick={useReset}>リセット</button>
+      {/* <button onClick={useReset}>リセット</button> */}
     </div>
   );
 }
