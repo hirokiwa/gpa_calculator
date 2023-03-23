@@ -28,7 +28,7 @@ const Square = (props: Square_type): JSX.Element => {
         ) as HTMLSelectElement;
         setSelectedGradeValue(gradeSelecter.value);
     };
-    return window.location.pathname === "/auto-credit-handler-test" ? (
+    return window.location.pathname !== "/auto-credit-handler-test" ? (
         <td className="class_box">
             <div>
                 <div className="select_outer">
