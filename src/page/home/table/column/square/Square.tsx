@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Square.css";
 interface Square_type {
     id_number: number;
+    isBrank: boolean;
+    setIsBrank:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Square = (props: Square_type): JSX.Element => {
     const [selectedGradeValue, setSelectedGradeValue] = useState("");
     const autoCreditHandler = () => {
+        props.setIsBrank(false)
         if (selectedGradeValue !== "") {
             return;
         }
@@ -28,6 +31,13 @@ const Square = (props: Square_type): JSX.Element => {
         ) as HTMLSelectElement;
         setSelectedGradeValue(gradeSelecter.value);
     };
+
+    useEffect(() => {
+        if(props.isBrank){
+            setSelectedGradeValue("")
+        }
+    },[props.isBrank])
+
     return window.location.pathname !== "/auto-credit-handler-test" ? (
         <td className="class_box">
             <div>
@@ -46,7 +56,7 @@ const Square = (props: Square_type): JSX.Element => {
             </div>
             <div>
                 <div className="select_outer">
-                    <select id={"credit" + props.id_number} style={{color:"black"}}>
+                    <select id={"credit" + props.id_number} style={{color:"black"}} onChange={()=>{props.setIsBrank(false)}}>
                         <option value="" selected disabled>
                             単位数
                         </option>

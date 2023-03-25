@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Data.css';
 import { useReward } from 'react-rewards';
+import Reset from '../../../function/Reset';
 
 interface type_data {
     setShow_popup: React.Dispatch<React.SetStateAction<boolean>>;
     gpa:number;
     setGpa:React.Dispatch<React.SetStateAction<number>>;
-    setCheck_confetti:React.Dispatch<React.SetStateAction<boolean>>;
+    setCheck_confetti: React.Dispatch<React.SetStateAction<boolean>>;
+    isBrank: boolean;
+    setIsBrank:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Data = (props:type_data):JSX.Element => {
@@ -56,9 +59,18 @@ const Data = (props:type_data):JSX.Element => {
         }
     }
 
+    const resetHandler = () => {
+        if (!window.confirm('リセットしますか？')) {
+            return
+        }
+        Reset()
+        props.setIsBrank(true);
+    }
+
   return (
     <div className='Data' onKeyPress={(e) => Pressenter}>
-        {/* <span id="rewardId" /> */}
+          {/* <span id="rewardId" /> */}
+        <button className='buttonSmall' disabled={props.isBrank} onClick={resetHandler}>リセット</button>
         <button className='button' onClick={Gpa}>計算</button>
     </div>
   );

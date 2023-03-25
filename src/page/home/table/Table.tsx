@@ -4,7 +4,12 @@ import TableHead from './table_head/TableHead';
 import Column from './column/Column';
 import Repeat from '../../../function/Repeat';
 
-const Table = ():JSX.Element => {
+interface type_table {
+    isBrank:boolean;
+    setIsBrank:React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Table = (props:type_table):JSX.Element => {
     return (
     <div className='Table'>
         <div className='table_outer'>
@@ -12,7 +17,11 @@ const Table = ():JSX.Element => {
                 <TableHead/>
                 <Repeat numTimes={6}>
                     {(index:number) => <div key={index}>
-                        <Column times = {index}/>
+                            <Column
+                                times={index}
+                                isBrank={props.isBrank}
+                                setIsBrank={props.setIsBrank}
+                            />
                     </div>
                     }
                 </Repeat>

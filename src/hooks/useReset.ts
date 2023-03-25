@@ -1,4 +1,4 @@
-const useReset = ():void => {
+const useReset = (): void => {
   for (let i = 0; i < 30; i++) {
     const creditSelecter = document.getElementById(
       "credit" + i
