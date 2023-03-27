@@ -3,7 +3,7 @@ import './Home.css';
 import Table from './table/Table';
 import Data from './data/Data';
 import Popup from './popup/Popup';
-import Header from '../header/Header';
+import Header from '../../componrnt/header/Header';
 
 const Home = ():JSX.Element => {
   const [show_popup, setShow_popup] = useState<boolean>(false)

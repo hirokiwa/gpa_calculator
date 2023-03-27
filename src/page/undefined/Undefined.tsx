@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../header/Header';
+import Header from '../../componrnt/header/Header';
 import './Undefined.css';
 
 const Undefined = ():JSX.Element => {
