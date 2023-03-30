@@ -7,10 +7,10 @@ interface Square_type {
 }
 
 const Square = (props: Square_type): JSX.Element => {
-    const [selectedGradeValue, setSelectedGradeValue] = useState("");
+    const [selectedGradeValue, setSelectedGradeValue] = useState<string>("-1");
     const autoCreditHandler = () => {
         props.setIsBrank(false)
-        if (selectedGradeValue !== "") {
+        if (selectedGradeValue !== "-1") {
             return;
         }
         if (
@@ -22,7 +22,7 @@ const Square = (props: Square_type): JSX.Element => {
         const creditSelecter = document.getElementById(
             "credit" + props.id_number
         ) as HTMLSelectElement;
-        if (creditSelecter.value !== "") {
+        if (creditSelecter.value !== "-1") {
             return;
         }
         creditSelecter.options[3].selected = true;
@@ -34,7 +34,7 @@ const Square = (props: Square_type): JSX.Element => {
 
     useEffect(() => {
         if(props.isBrank){
-            setSelectedGradeValue("")
+            setSelectedGradeValue("-1")
         }
     },[props.isBrank])
 
@@ -43,7 +43,7 @@ const Square = (props: Square_type): JSX.Element => {
             <div>
                 <div className="select_outer">
                     <select id={"grade" + props.id_number} style={{color:"black"}} onChange={autoCreditHandler}>
-                        <option value="" selected disabled>
+                        <option value="-1" selected disabled>
                             評価　
                         </option>
                         <option value="5">A+</option>
@@ -57,7 +57,7 @@ const Square = (props: Square_type): JSX.Element => {
             <div>
                 <div className="select_outer">
                     <select id={"credit" + props.id_number} style={{color:"black"}} onChange={()=>{props.setIsBrank(false)}}>
-                        <option value="" selected disabled>
+                        <option value="-1" selected disabled>
                             単位数
                         </option>
                         <option>0</option>
@@ -74,7 +74,7 @@ const Square = (props: Square_type): JSX.Element => {
             <div>
                 <div className="select_outer">
                     <select id={"grade" + props.id_number} style={{color:"black"}}>
-                        <option value="" selected disabled>
+                        <option value="-1" selected disabled>
                             評価　
                         </option>
                         <option value="5">A+</option>

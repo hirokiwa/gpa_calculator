@@ -11,6 +11,10 @@ const Home = ():JSX.Element => {
   const [check_confetti, setCheck_confetti] = useState<boolean>(false)
   const [isBrank, setIsBrank] = useState<boolean>(true)
 
+  window.addEventListener("beforeunload", (event) => {
+    event.returnValue = "このサイトを離れますか?";
+  });
+
   return (
     <div className='Home'>
         <Header/>

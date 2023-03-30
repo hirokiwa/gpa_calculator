@@ -1,7 +1,7 @@
-const useReset = (): boolean => {
-  if (!window.confirm('リセットしますか？')) {
-    return false
-  }
+const resetTable = (): boolean => {
+  // if (!window.confirm('リセットしますか？')) {
+  //   return false
+  // }
 
   for (let i = 0; i < 30; i++) {
     const creditSelecter = document.getElementById(
@@ -15,7 +15,7 @@ const useReset = (): boolean => {
     gradeSelecter.options[0].selected = true;
   }
 
-  return(true)
+  return true
 }
 
-export default useReset;
+export default resetTable;
