@@ -140,7 +140,13 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
                 onClick={arrowBackHandler}
                 disabled={changeHistory.length < 1 || currentHistoryIndex < 0}
             >
-                <span className="material-icons">
+                <span className="material-icons"
+                    style={changeHistory.length < 1 || currentHistoryIndex < 0
+                    ? undefined
+                    : {
+                        color: "black"
+                    }}
+                >
                     arrow_back
                 </span>
             </ControlButton>
@@ -148,7 +154,13 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
                 onClick={arrowForwardHandler}
                 disabled = {changeHistory.length - currentHistoryIndex <= 1}
             >
-                <span className="material-icons">
+                <span className="material-icons"
+                    style={changeHistory.length - currentHistoryIndex <= 1
+                    ? undefined
+                    : {
+                        color: "black"
+                    }}
+                >
                     arrow_forward
                 </span>
             </ControlButton>
@@ -156,7 +168,13 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
                 onClick = {refreshHandler}
                 disabled = { isBrank }
             >
-                <span className="material-icons">
+                <span className="material-icons"
+                    style={isBrank
+                    ? undefined
+                    : {
+                        color: "black"
+                    }}
+                >
                     refresh
                 </span>
             </ControlButton>
