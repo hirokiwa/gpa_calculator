@@ -2,6 +2,7 @@ import React from 'react';
 import './Data.css';
 import { useReward } from 'react-rewards';
 import { squareData } from '../../../@types/global';
+import getAllSquareData from '../../../function/getAllSquareData';
 
 interface type_data {
     setShow_popup: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,19 +18,7 @@ const Data = (props:type_data):JSX.Element => {
 
     const Gpa = () =>{
 
-        let acquiredData:squareData[] = []
-        
-        for(let i = 0; i < 30; i++){
-            const gradeValue = document.getElementById("grade" + String(i)) as HTMLSelectElement;
-            const creditValue = document.getElementById("credit" + String(i)) as HTMLSelectElement;
-
-            const acquiredSquareData = {
-                grade: Number(gradeValue.value),
-                credit: Number(creditValue.value)
-            } as squareData
-
-            acquiredData.push(acquiredSquareData)
-        }
+        const acquiredData = getAllSquareData()
 
         for(let i = 0; i < acquiredData.length; i++){
             if(acquiredData[i].grade !== acquiredData[i].credit){
