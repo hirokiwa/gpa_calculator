@@ -23,6 +23,9 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
             return
         }
 
+        let newTable = currentTable;
+        let newIsBrank = true;
+
         changeHistory[currentHistoryIndex].forEach((change, index) => {
             changeSelectedValue({
                 elementNumber: change.elementNumber,
@@ -34,11 +37,67 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
                 grade: change.before.grade,
                 credit: change.before.credit
             } as squareData
-            setCurrentTable(currentTable.map((data, index) => ( index === change.elementNumber ? newSquareData : data)))
+
+            if (newSquareData.grade !== -1  || newSquareData.credit !== -1) {
+                newIsBrank = false
+            }
+
+            newTable[change.elementNumber] = newSquareData;
         })
 
-        setIsBrank(currentHistoryIndex === 0)
+        for (let i = 0; i < newTable.length; i++){
+            if (!newIsBrank) {
+                break
+            }
+
+            if (newTable[i].grade !== -1 || newTable[i].credit !== -1) {
+                newIsBrank = false;
+                break
+            }
+        }
+
+        setCurrentTable(newTable)
+        setIsBrank(currentHistoryIndex === 0 || newIsBrank)
         setCurrentHistoryIndex(currentHistoryIndex - 1)
+    }
+
+    const arrowForwardHandler = () => {
+        let newTable = currentTable;
+        let newIsBrank = true;
+
+        changeHistory[currentHistoryIndex + 1].forEach((change, index) => {
+            changeSelectedValue({
+                elementNumber: change.elementNumber,
+                gradeOption: gradeValueToOption(change.after.grade),
+                creditOption: creditValueToOption(change.after.credit)
+            })
+
+            const newSquareData = {
+                grade: change.after.grade,
+                credit: change.after.credit
+            } as squareData
+
+            if (newSquareData.grade !== -1  || newSquareData.credit !== -1) {
+                newIsBrank = false
+            }
+
+            newTable[change.elementNumber] = newSquareData;
+        })
+
+        for (let i = 0; i < newTable.length; i++){
+            if (!newIsBrank) {
+                break
+            }
+
+            if (newTable[i].grade !== -1 || newTable[i].credit !== -1) {
+                newIsBrank = false;
+                break
+            }
+        }
+
+        setCurrentTable(newTable)
+        setIsBrank(newIsBrank)
+        setCurrentHistoryIndex(currentHistoryIndex + 1)
     }
 
     const refreshHandler = () => {
@@ -74,7 +133,7 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
         )))
         setIsBrank(true)
     }
-
+    
     return (
         <>
             <ControlButton
@@ -86,7 +145,8 @@ const ControlBar: FC<Props> = ({ isBrank, setIsBrank, changeHistory, setChangeHi
                 </span>
             </ControlButton>
             <ControlButton
-                disabled
+                onClick={arrowForwardHandler}
+                disabled = {changeHistory.length - currentHistoryIndex <= 1}
             >
                 <span className="material-icons">
                     arrow_forward

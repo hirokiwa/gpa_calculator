@@ -67,10 +67,6 @@ const Square = (props: Square_type): JSX.Element => {
     const changedCreditHandler = () => {
         onChangeSelectedValue("credit");
     }
-    
-    useEffect(() => {
-        console.log(props.changeHistory)
-    },[props.changeHistory])
 
     return (
         <td className="class_box">
