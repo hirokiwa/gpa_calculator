@@ -33,7 +33,12 @@ const Popup = (props:type_popup):JSX.Element => {
                     <CancelButton
                         onClick={close_popup}
                     >
-                        <span className="material-symbols-outlined">
+                        <span
+                            className="material-symbols-outlined"
+                            style={{
+                                color: "black",
+                            }}
+                        >
                             close
                         </span>
                     </CancelButton>
