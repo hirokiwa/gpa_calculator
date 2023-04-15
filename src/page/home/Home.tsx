@@ -15,8 +15,16 @@ const Home = ():JSX.Element => {
     event.returnValue = "このサイトを離れますか?";
   });
 
+  const keyDownHandler = (event:React.KeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case "Escape":
+        setShow_popup(false);
+        break;
+    }
+  }
+
   return (
-    <div className='Home'>
+    <div className='Home' onKeyDown={keyDownHandler}>
         <Header/>
         <h1 className='discription'>立命館大学専用のGPA計算ツールです。</h1>
         <Table
@@ -42,7 +50,6 @@ const Home = ():JSX.Element => {
           />
           : null
       }
-      {/* <button onClick={useReset}>リセット</button> */}
     </div>
   );
 }
