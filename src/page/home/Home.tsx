@@ -4,6 +4,7 @@ import Table from './table/Table';
 import Data from './data/Data';
 import Popup from './popup/Popup';
 import Header from '../../componrnt/header/Header';
+import DisableScroll from '../../componrnt/DisabledScroll';
 
 const Home = ():JSX.Element => {
   const [show_popup, setShow_popup] = useState<boolean>(false)
@@ -24,7 +25,10 @@ const Home = ():JSX.Element => {
   }
 
   return (
-    <div className='Home' onKeyDown={keyDownHandler}>
+    <div
+      className='Home'
+      onKeyDown={keyDownHandler}
+    >
         <Header/>
         <h1 className='discription'>立命館大学専用のGPA計算ツールです。</h1>
         <Table
@@ -41,13 +45,16 @@ const Home = ():JSX.Element => {
         />
         <div id="content"></div>
         {show_popup ? 
-          <Popup 
-            show_popup = {show_popup}
-            setShow_popup = {setShow_popup}
-            gpa = {gpa}
-            check_confetti ={check_confetti}
-            setCheck_confetti = {setCheck_confetti}
-          />
+          <>
+            <Popup 
+              show_popup = {show_popup}
+              setShow_popup = {setShow_popup}
+              gpa = {gpa}
+              check_confetti ={check_confetti}
+              setCheck_confetti = {setCheck_confetti}
+            />
+            <DisableScroll/>
+          </>
           : null
       }
     </div>
