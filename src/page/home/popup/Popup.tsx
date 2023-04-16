@@ -26,8 +26,14 @@ const Popup = (props:type_popup):JSX.Element => {
         }
     });
 
+    const modalClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) {
+            props.setShow_popup(false)
+        }
+    };
+
     return(
-        <div className='Popup'>
+        <div className='Popup' onClick={modalClickHandler}>
             <div className='Popup_inner'>
                 <div className='close_outer'>
                     <CancelButton
